@@ -13,6 +13,7 @@ services:
   - type: web
     name: buildpilot-api
     runtime: python
+    plan: free
     rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
@@ -34,5 +35,6 @@ services:
         sync: false
 databases:
   - name: buildpilot-db
+    plan: free
     databaseName: buildpilot
     user: buildpilot
